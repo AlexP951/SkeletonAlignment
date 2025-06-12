@@ -2,7 +2,7 @@ from scipy.signal import find_peaks
 import numpy as np
 import matplotlib.pyplot as plt
 
-def AlignSkeletons(laptop_file, iphone_file):
+def PeakAlignment(laptop_file, iphone_file):
     flippedLap = [-y for y in extractYValues(laptop_file)]
     flippedIphone = [-y for y in extractYValues(iphone_file)]
 

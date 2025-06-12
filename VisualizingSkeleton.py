@@ -67,8 +67,8 @@ def visualize_skeletons(laptop_file, iphone_file, manual_offset):
         skel2 = shift_skeleton(iphone_frames[frame], reference_anchor)
 
         mid_x, mid_y = reference_anchor
-        ax.set_xlim(mid_x - 300, mid_x + 300)
-        ax.set_ylim(mid_y + 300, mid_y - 300)
+        ax.set_xlim(mid_x - 400, mid_x + 200)
+        ax.set_ylim(mid_y + 100, mid_y - 500)
         ax.set_title(f"Frame {frame + 1}: Skeleton Comparison")
 
         plot_skeleton(ax, laptop_frames[frame], "blue")

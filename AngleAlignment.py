@@ -7,9 +7,7 @@ def extract_joint_angles(frame_data):
         """Computes the angle between three joints, handling missing data."""
         if any(j is None or j == [-100, -100] for j in [joint_a, joint_b, joint_c]):
             return None  # Missing data
-
         a, b, c = np.array(joint_a), np.array(joint_b), np.array(joint_c)
-
         ab = a - b
         cb = c - b
 
@@ -39,7 +37,7 @@ def extract_joint_angles(frame_data):
     return knee_angle, elbow_angle, hip_angle, shoulder_angle
 
 
-def compute_angle_differences(skeleton1, skeleton2, max_offset=101):
+def compute_angle_alignment(skeleton1, skeleton2, max_offset=101):
     best_offset = 0
     min_diff = float("inf")
     offset_results = {}
